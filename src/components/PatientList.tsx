@@ -1,8 +1,7 @@
 import { usePatientStore } from "../store"
 import PatientDetails from "./PatientDetails"
 export default function PatientList() {
-    const patients = usePatientStore(state => state.patients)
-
+  const patients = usePatientStore(state => state.patients)
   return (
     <div className="md:-1/2 lg:3/5 md:h-screen overflow-y-scroll">
       {patients.length ? (
@@ -11,12 +10,12 @@ export default function PatientList() {
             <p className="text-xl mt-5 mb-10 text-center">Administra tus {''}
                 <span className="text-indigo-600 font-bold" >Pacientes y Citas</span>
             </p>
-            {patients.map(patient => {
-                <PatientDetails
-                    key={patient.id}
-                    patient={patient}
-                />
-            })}
+            {patients.map(patient => (
+              <PatientDetails
+                      key={patient.id}
+                      patient={patient}
+                  />
+              ))}
         </>
         
       ): (
